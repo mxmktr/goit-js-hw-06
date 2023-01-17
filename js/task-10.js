@@ -15,19 +15,24 @@ function createBoxes(amount) {
         return
     }
 
+    const divElCol = []
+
     for (let i = 1; i <= amount; i++) {
         const divElement = document.createElement('div')
         divElement.style.backgroundColor = getRandomHexColor()
         divElement.style.width = `${baseWidth}px`
         divElement.style.height = `${baseHeight}px`
-        outputBoxes.append(divElement)
+        divElCol.push(divElement)
         baseHeight += 10
         baseWidth += 10
     }
+    outputBoxes.append(...divElCol)
 }
 
 function destroyBoxes() {
     outputBoxes.innerHTML = ''
+    baseHeight = 30
+    baseWidth = 30
 }
 
 let amount = 0

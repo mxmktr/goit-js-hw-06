@@ -10,9 +10,13 @@ const ingredients = [
 const ingredientsList = document.getElementById('ingredients')
 const itemClassName = 'item'
 
+const itemCollection = []
+
 ingredients.forEach((ingredient) => {
     const ingredientItem = document.createElement('li')
     ingredientItem.classList.add(itemClassName)
     ingredientItem.textContent = ingredient
-    ingredientsList.append(ingredientItem)
+    itemCollection.push(ingredientItem)
 })
+
+ingredientsList.append(...itemCollection)
